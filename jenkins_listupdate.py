@@ -13,9 +13,9 @@ from luigi.s3 import S3Client
 from conf_jenkins_listupdate import Const
 
 
-today = datetime.datetime.now(pytz.utc).astimezone(pytz.timezone(Const.TIMEZONE))
+today = datetime.datetime.now(pytz.utc).astimezone(pytz.timezone(Const.{TIMEZONE}))
 today_formatted = today.strftime('%Y%m%d')
-logger = logging.getLogger('analytics-pf')
+logger = logging.getLogger('{place  your logger config here}')
 client = S3Client()
 
 def get_server_instance():
